@@ -18,6 +18,11 @@ public class Block {
         this.data = data;
         this.previousHash = previousHash;
         this.timestamp = LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
+        this.hash = calculateHash();
+    }
+
+    public String calculateHash() {
+        return Crypt.sha256(previousHash + Long.toString(timestamp) + data);
     }
 
 }
