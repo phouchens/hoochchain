@@ -2,7 +2,6 @@ package com.hoochchain;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.util.Optional;
 import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -22,6 +21,9 @@ public class Crypt {
         }
     }
 
-    private static final IntFunction<String> convertIntToStream = h -> Optional.of(Integer.toHexString(0xff & h)).filter(x -> x.length() != 1).orElse("0");
+    private static final IntFunction<String> convertIntToStream = h -> {
+        final String hex = Integer.toHexString(0xff & h);
+        return hex.length() == 1 ? "0" + hex : hex;
+    };
 
 }
