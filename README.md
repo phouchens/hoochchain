@@ -1,5 +1,5 @@
 ## Description
-A simple blockchain written in Java to help Java developers understand basic blockchain concepts.
+A simple blockchain written in Java to help developers understand basic blockchain concepts.
 
 ### Run the app
 To run the app from the terminal: 
